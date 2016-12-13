@@ -10,16 +10,24 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var connectButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func connectButtonPressed() {
+        
     }
-
-
+    
+    @IBAction func startTrackpadButtonPressed() {
+        let trackpadVC = TrackpadViewController()
+        self.present(trackpadVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func settingsButtonPressed() {
+        let settingsVC = SettingsViewController()
+        self.present(settingsVC, animated: true, completion: nil)
+    }
 }
 
