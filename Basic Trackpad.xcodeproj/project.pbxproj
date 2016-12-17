@@ -16,6 +16,8 @@
 		F1D574F91E00463300E71663 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1D574F71E00463300E71663 /* SettingsView.xib */; };
 		F1D574FF1E0048D400E71663 /* TrackpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D574FD1E0048D400E71663 /* TrackpadViewController.swift */; };
 		F1D575001E0048D400E71663 /* TrackpadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1D574FE1E0048D400E71663 /* TrackpadView.xib */; };
+		F1E9861C1E05573000AEE848 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9861B1E05573000AEE848 /* ConnectionManager.swift */; };
+		F1E9861E1E0558BD00AEE848 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E9861D1E0558BD00AEE848 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F1D574F71E00463300E71663 /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		F1D574FD1E0048D400E71663 /* TrackpadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackpadViewController.swift; sourceTree = "<group>"; };
 		F1D574FE1E0048D400E71663 /* TrackpadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackpadView.xib; sourceTree = "<group>"; };
+		F1E9861B1E05573000AEE848 /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		F1E9861D1E0558BD00AEE848 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				F1AD0B801DFF15CC00EBC177 /* AppDelegate.swift */,
+				F1E9861D1E0558BD00AEE848 /* Constants.swift */,
+				F1E9861B1E05573000AEE848 /* ConnectionManager.swift */,
 				F1D574FB1E0048AF00E71663 /* Main View */,
 				F1D574FC1E0048BD00E71663 /* Trackpad View */,
 				F1D574FA1E0048A500E71663 /* Settings View */,
@@ -175,10 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E9861C1E05573000AEE848 /* ConnectionManager.swift in Sources */,
 				F1D574FF1E0048D400E71663 /* TrackpadViewController.swift in Sources */,
 				F1AD0B831DFF15CC00EBC177 /* MainViewController.swift in Sources */,
 				F1AD0B811DFF15CC00EBC177 /* AppDelegate.swift in Sources */,
 				F1D574F81E00463300E71663 /* SettingsViewController.swift in Sources */,
+				F1E9861E1E0558BD00AEE848 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

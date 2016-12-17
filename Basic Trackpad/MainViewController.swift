@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func connectButtonPressed() {
-        
+        self.present(ConnectionManager.shared.browser, animated: true, completion: nil)
     }
     
     @IBAction func startTrackpadButtonPressed() {
