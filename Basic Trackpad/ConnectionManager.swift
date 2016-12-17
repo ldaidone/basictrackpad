@@ -36,21 +36,21 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
     
     // MARK: - Data transfer
     
-    func send(movement: CGVector, to peer: MCPeerID) {
+    func send(movement: CGVector) {
         var mov = movement
         let data = Data(bytes: &mov, count: MemoryLayout<CGVector>.size)
         do {
-            try self.session.send(data, toPeers: [peer], with: MCSessionSendDataMode.unreliable)
+            try self.session.send(data, toPeers: Array(connectedPeers), with: MCSessionSendDataMode.unreliable)
         } catch {
             print(error)
         }
     }
     
-    func send(mouseDown: Bool, to peer: MCPeerID) {
+    func send(mouseDown: Bool) {
         var down = mouseDown
         let data = Data(bytes: &down, count: MemoryLayout<Bool>.size)
         do {
-            try self.session.send(data, toPeers: [peer], with: MCSessionSendDataMode.reliable)
+            try self.session.send(data, toPeers: Array(connectedPeers), with: MCSessionSendDataMode.reliable)
         } catch {
             print(error)
         }
