@@ -20,7 +20,12 @@ class TrackpadViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func closeGestureRecognized(_ sender: UITapGestureRecognizer) {
+    @IBAction func pan(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: gesture.view).vector
+        ConnectionManager.shared.send(movement: translation)
+    }
+    
+    @IBAction func closeGestureRecognized(_ gesture: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
 }

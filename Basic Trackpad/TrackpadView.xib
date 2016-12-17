@@ -34,6 +34,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
                 <outletCollection property="gestureRecognizers" destination="ObZ-Uf-Fpq" appends="YES" id="ad7-DE-9Tb"/>
+                <outletCollection property="gestureRecognizers" destination="rWk-sH-zAF" appends="YES" id="XIy-zX-ihM"/>
             </connections>
         </view>
         <tapGestureRecognizer delaysTouchesEnded="NO" numberOfTapsRequired="2" numberOfTouchesRequired="3" id="ObZ-Uf-Fpq">
@@ -41,5 +42,10 @@
                 <action selector="closeGestureRecognized:" destination="-1" id="hkA-BM-IBX"/>
             </connections>
         </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="rWk-sH-zAF">
+            <connections>
+                <action selector="pan:" destination="-1" id="HmY-ae-YrK"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
 </document>

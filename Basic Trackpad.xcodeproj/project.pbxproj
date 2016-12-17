@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F14A060F1E05655C003C7C9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A060E1E05655C003C7C9F /* Extensions.swift */; };
 		F1AD0B811DFF15CC00EBC177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD0B801DFF15CC00EBC177 /* AppDelegate.swift */; };
 		F1AD0B831DFF15CC00EBC177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD0B821DFF15CC00EBC177 /* MainViewController.swift */; };
 		F1AD0B861DFF15CC00EBC177 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AD0B841DFF15CC00EBC177 /* MainView.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F14A060E1E05655C003C7C9F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F1AD0B7D1DFF15CC00EBC177 /* Basic Trackpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic Trackpad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AD0B801DFF15CC00EBC177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1AD0B821DFF15CC00EBC177 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				F1AD0B801DFF15CC00EBC177 /* AppDelegate.swift */,
 				F1E9861D1E0558BD00AEE848 /* Constants.swift */,
+				F14A060E1E05655C003C7C9F /* Extensions.swift */,
 				F1E9861B1E05573000AEE848 /* ConnectionManager.swift */,
 				F1D574FB1E0048AF00E71663 /* Main View */,
 				F1D574FC1E0048BD00E71663 /* Trackpad View */,
@@ -187,6 +190,7 @@
 				F1AD0B811DFF15CC00EBC177 /* AppDelegate.swift in Sources */,
 				F1D574F81E00463300E71663 /* SettingsViewController.swift in Sources */,
 				F1E9861E1E0558BD00AEE848 /* Constants.swift in Sources */,
+				F14A060F1E05655C003C7C9F /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
