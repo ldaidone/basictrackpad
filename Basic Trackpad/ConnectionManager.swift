@@ -28,6 +28,13 @@ class ConnectionManager: NSObject, MCSessionDelegate {
     
     lazy var browser: MCBrowserViewController = MCBrowserViewController(serviceType: serviceType, session: self.session)
     
+    // MARK: - Settings
+    
+    var mouseAcceleration: CGFloat = {
+        UserDefaults.standard.register(defaults: [mouseAccelerationValueKey: Float(1.30)])
+        return CGFloat(UserDefaults.standard.float(forKey: mouseAccelerationValueKey))
+    }()
+    
     // MARK: - Data transfer
     
     func send(movement: CGVector) {

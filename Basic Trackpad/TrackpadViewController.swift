@@ -28,7 +28,11 @@ class TrackpadViewController: UIViewController {
     @IBAction func pan(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: gesture.view)
         if let previous = self.previousTranslation {
-            let movement = CGVector(dx: translation.x - previous.x, dy: translation.y - previous.y)
+            
+            let sign = CGPoint(x: (translation.x - previous.x) >= 0.0 ? 1.0 : -1.0, y: (translation.y - previous.y) >= 0.0 ? 1.0 : -1.0)
+            
+            let movement = CGVector(dx: pow(fabs(translation.x - previous.x), ConnectionManager.shared.mouseAcceleration) * sign.x, dy: pow(fabs(translation.y - previous.y), ConnectionManager.shared.mouseAcceleration) * sign.y)
+            
             ConnectionManager.shared.send(movement: movement)
         }
         self.previousTranslation = (gesture.state == .ended || gesture.state == .cancelled) ? nil : translation

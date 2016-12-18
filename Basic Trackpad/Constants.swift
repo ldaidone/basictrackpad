@@ -7,3 +7,4 @@
 //
 
 let serviceType = "basictrackpad"
+let mouseAccelerationValueKey = "MouseAccelerationValue"
