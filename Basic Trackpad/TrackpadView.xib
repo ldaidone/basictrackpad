@@ -35,6 +35,7 @@
             <connections>
                 <outletCollection property="gestureRecognizers" destination="ObZ-Uf-Fpq" appends="YES" id="ad7-DE-9Tb"/>
                 <outletCollection property="gestureRecognizers" destination="rWk-sH-zAF" appends="YES" id="XIy-zX-ihM"/>
+                <outletCollection property="gestureRecognizers" destination="bot-LA-9Aa" appends="YES" id="gLi-xu-66x"/>
             </connections>
         </view>
         <tapGestureRecognizer delaysTouchesEnded="NO" numberOfTapsRequired="2" numberOfTouchesRequired="3" id="ObZ-Uf-Fpq">
@@ -47,5 +48,10 @@
                 <action selector="pan:" destination="-1" id="HmY-ae-YrK"/>
             </connections>
         </panGestureRecognizer>
+        <tapGestureRecognizer id="bot-LA-9Aa" userLabel="LMB Gesture">
+            <connections>
+                <action selector="lmbGesture:" destination="-1" id="1Nc-3S-2JG"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

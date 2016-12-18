@@ -50,6 +50,16 @@ class ConnectionManager: NSObject, MCSessionDelegate {
         }
     }
     
+    func send(mouseEventCode: UInt16) {
+        var code = mouseEventCode
+        let data = Data(bytes: &code, count: MemoryLayout<UInt16>.size)
+        do {
+            try self.session.send(data, toPeers: self.session.connectedPeers, with: MCSessionSendDataMode.reliable)
+        } catch {
+            print(error)
+        }
+    }
+    
     // MARK: - MCSessionDelegate
     
     public func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {

@@ -20,6 +20,10 @@ class TrackpadViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func lmbGesture(_ gesture: UITapGestureRecognizer) {
+        ConnectionManager.shared.send(mouseEventCode: 0)
+    }
+    
     var previousTranslation: CGPoint?
     @IBAction func pan(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: gesture.view)
