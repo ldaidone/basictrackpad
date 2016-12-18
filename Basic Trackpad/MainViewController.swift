@@ -9,7 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    @IBOutlet weak var startTrackpadButton: UIButton!
     @IBOutlet weak var connectButton: UIButton!
     
     override func viewDidLoad() {
@@ -23,12 +24,15 @@ class MainViewController: UIViewController {
         } else {
             ConnectionManager.shared.session.disconnect()
             self.connectButton.setTitle("Connect", for: .normal)
+            self.startTrackpadButton.isEnabled = false
         }
     }
     
     @IBAction func startTrackpadButtonPressed() {
-        let trackpadVC = TrackpadViewController()
-        self.present(trackpadVC, animated: true, completion: nil)
+        if !ConnectionManager.shared.session.connectedPeers.isEmpty {
+            let trackpadVC = TrackpadViewController()
+            self.present(trackpadVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func settingsButtonPressed() {

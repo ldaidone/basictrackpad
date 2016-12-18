@@ -27,6 +27,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0e-vC-gTy">
+                                <rect key="frame" x="121" y="149" width="132" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Start Trackpad"/>
+                                <connections>
+                                    <action selector="startTrackpadButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="fF9-dz-xTP"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXu-EJ-FnD">
                                 <rect key="frame" x="0.0" y="303.5" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.37647058823529411" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,14 +52,6 @@
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="settingsButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="ysV-hO-6IR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0e-vC-gTy">
-                                <rect key="frame" x="121" y="149" width="132" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start Trackpad"/>
-                                <connections>
-                                    <action selector="startTrackpadButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="fF9-dz-xTP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,6 +72,7 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="connectButton" destination="uXu-EJ-FnD" id="c4O-Kc-VpF"/>
+                        <outlet property="startTrackpadButton" destination="O0e-vC-gTy" id="sjI-37-LFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

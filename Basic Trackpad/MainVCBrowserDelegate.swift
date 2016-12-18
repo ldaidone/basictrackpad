@@ -13,6 +13,7 @@ extension MainViewController: MCBrowserViewControllerDelegate {
         browserViewController.dismiss(animated: true, completion: nil)
         if !ConnectionManager.shared.session.connectedPeers.isEmpty {
             self.connectButton.setTitle("Disconnect", for: .normal)
+            self.startTrackpadButton.isEnabled = true
         }
     }
     
