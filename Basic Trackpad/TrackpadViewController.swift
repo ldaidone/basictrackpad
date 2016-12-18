@@ -20,9 +20,14 @@ class TrackpadViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    var previousTranslation: CGPoint?
     @IBAction func pan(_ gesture: UIPanGestureRecognizer) {
-        let translation = gesture.translation(in: gesture.view).vector
-        ConnectionManager.shared.send(movement: translation)
+        let translation = gesture.translation(in: gesture.view)
+        if let previous = self.previousTranslation {
+            let movement = CGVector(dx: translation.x - previous.x, dy: translation.y - previous.y)
+            ConnectionManager.shared.send(movement: movement)
+        }
+        self.previousTranslation = (gesture.state == .ended || gesture.state == .cancelled) ? nil : translation
     }
     
     @IBAction func closeGestureRecognized(_ gesture: UITapGestureRecognizer) {
