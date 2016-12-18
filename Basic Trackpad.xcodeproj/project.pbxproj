@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F14A060F1E05655C003C7C9F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A060E1E05655C003C7C9F /* Extensions.swift */; };
+		F14A06111E06E60F003C7C9F /* MainVCBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14A06101E06E60F003C7C9F /* MainVCBrowserDelegate.swift */; };
 		F1AD0B811DFF15CC00EBC177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD0B801DFF15CC00EBC177 /* AppDelegate.swift */; };
 		F1AD0B831DFF15CC00EBC177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AD0B821DFF15CC00EBC177 /* MainViewController.swift */; };
 		F1AD0B861DFF15CC00EBC177 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1AD0B841DFF15CC00EBC177 /* MainView.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		F14A060E1E05655C003C7C9F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F14A06101E06E60F003C7C9F /* MainVCBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCBrowserDelegate.swift; sourceTree = "<group>"; };
 		F1AD0B7D1DFF15CC00EBC177 /* Basic Trackpad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic Trackpad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1AD0B801DFF15CC00EBC177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1AD0B821DFF15CC00EBC177 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				F1AD0B841DFF15CC00EBC177 /* MainView.storyboard */,
 				F1AD0B821DFF15CC00EBC177 /* MainViewController.swift */,
+				F14A06101E06E60F003C7C9F /* MainVCBrowserDelegate.swift */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				F1E9861C1E05573000AEE848 /* ConnectionManager.swift in Sources */,
 				F1D574FF1E0048D400E71663 /* TrackpadViewController.swift in Sources */,
 				F1AD0B831DFF15CC00EBC177 /* MainViewController.swift in Sources */,
+				F14A06111E06E60F003C7C9F /* MainVCBrowserDelegate.swift in Sources */,
 				F1AD0B811DFF15CC00EBC177 /* AppDelegate.swift in Sources */,
 				F1D574F81E00463300E71663 /* SettingsViewController.swift in Sources */,
 				F1E9861E1E0558BD00AEE848 /* Constants.swift in Sources */,

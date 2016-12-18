@@ -14,10 +14,16 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ConnectionManager.shared.browser.delegate = self
     }
     
     @IBAction func connectButtonPressed() {
-        self.present(ConnectionManager.shared.browser, animated: true, completion: nil)
+        if ConnectionManager.shared.session.connectedPeers.isEmpty {
+            self.present(ConnectionManager.shared.browser, animated: true, completion: nil)
+        } else {
+            ConnectionManager.shared.session.disconnect()
+            self.connectButton.setTitle("Connect", for: .normal)
+        }
     }
     
     @IBAction func startTrackpadButtonPressed() {

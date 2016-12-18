@@ -8,7 +8,7 @@
 
 import MultipeerConnectivity
 
-class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDelegate {
+class ConnectionManager: NSObject, MCSessionDelegate {
     
     static let shared = ConnectionManager()
     
@@ -26,11 +26,7 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
         return s
     }()
     
-    lazy var browser: MCBrowserViewController = {
-        let b = MCBrowserViewController(serviceType: serviceType, session: self.session)
-        b.delegate = self
-        return b
-    }()
+    lazy var browser: MCBrowserViewController = MCBrowserViewController(serviceType: serviceType, session: self.session)
     
     // MARK: - Data transfer
     
@@ -74,16 +70,5 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
     
     public func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL, withError error: Error?) {
         print(#function)
-    }
-    
-    // MARK: - MCBrowserViewControllerDelegate
-    
-    public func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    public func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        self.session.disconnect()
-        browserViewController.dismiss(animated: true, completion: nil)
     }
 }
