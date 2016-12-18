@@ -26,8 +26,6 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
         return s
     }()
     
-    var connectedPeers = Set<MCPeerID>()
-    
     lazy var browser: MCBrowserViewController = {
         let b = MCBrowserViewController(serviceType: serviceType, session: self.session)
         b.delegate = self
@@ -40,7 +38,7 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
         var mov = movement
         let data = Data(bytes: &mov, count: MemoryLayout<CGVector>.size)
         do {
-            try self.session.send(data, toPeers: Array(connectedPeers), with: MCSessionSendDataMode.unreliable)
+            try self.session.send(data, toPeers: self.session.connectedPeers, with: MCSessionSendDataMode.unreliable)
         } catch {
             print(error)
         }
@@ -50,7 +48,7 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
         var down = mouseDown
         let data = Data(bytes: &down, count: MemoryLayout<Bool>.size)
         do {
-            try self.session.send(data, toPeers: Array(connectedPeers), with: MCSessionSendDataMode.reliable)
+            try self.session.send(data, toPeers: self.session.connectedPeers, with: MCSessionSendDataMode.reliable)
         } catch {
             print(error)
         }
@@ -60,13 +58,6 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
     
     public func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         print(#function, peerID.displayName, state.rawValue)
-        
-        if state.rawValue == 0 {
-            connectedPeers.remove(peerID)
-        }
-        if state.rawValue == 2 {
-            connectedPeers.insert(peerID)
-        }
     }
     
     public func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
@@ -92,7 +83,7 @@ class ConnectionManager: NSObject, MCSessionDelegate, MCBrowserViewControllerDel
     }
     
     public func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        connectedPeers.removeAll()
+        self.session.disconnect()
         browserViewController.dismiss(animated: true, completion: nil)
     }
 }
